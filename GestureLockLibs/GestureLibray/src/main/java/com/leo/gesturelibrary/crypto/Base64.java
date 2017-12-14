@@ -268,14 +268,15 @@ public final class Base64 {
 
     /**
      * 加密字符串
-     * @return
+     *
      * @param password
+     * @return
      */
     public static String encryptionString(int[] password) {
-        String str = null;
+        StringBuilder sb = new StringBuilder();
         for (int i : password) {
-            str += i + "";
+            sb.append(i);
         }
-        return Base64.encode(str.getBytes());
+        return Base64.encode(sb.toString().getBytes());
     }
 }
